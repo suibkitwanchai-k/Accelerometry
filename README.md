@@ -1,2 +1,3 @@
-# Actigraphy_Project
-This repository is contributed to PLOS One submission in 2020.
+# Data repository for the manuscript entitled "Nonparametric time series summary statistics for high-frequency actigraphy data from individuals with advanced dementia"
+
+(Suibkitwanchai et al., 2020)
