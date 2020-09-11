@@ -1,5 +1,5 @@
 ## inputs
-X <- data # insert actigraph time series data here
+X <- data # insert accelerometry time series data here
 eps <- 5 # insert sampling interval in second(s), this value is 5 in Suibkitwanchai et al. (2020)
 ## preliminaries
 N <- length(X)
@@ -29,6 +29,6 @@ for (ns in 1:n.scale) {
   f[ns] <- sqrt(mean(RMS_local^2)) # Eq (7)
   }
 C <- polyfit(log2(scale), log2(f), 1)
-hurst <- C[1] # Hurst exponent is estimated by the slope of regression line
+alpha <- C[1] # DFA scaling exponent is estimated by the slope of regression line
 ## outputs
-hurst
+alpha
