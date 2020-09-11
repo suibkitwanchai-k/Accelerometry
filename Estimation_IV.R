@@ -1,5 +1,5 @@
 ## inputs
-X <- data # insert actigraph time series data here
+X <- data # insert accelerometry time series data here
 eps <- 5 # insert sampling interval in second(s), this value is 5 in Suibkitwanchai et al. (2020)
 Delta <- 60 # subsampling period as a multiple of eps (set as a positive integer, value of 1 corresponds to no subsampling and value of 60 chosen in Suibkitwanchai et al. (2020))
 ## preliminaries
