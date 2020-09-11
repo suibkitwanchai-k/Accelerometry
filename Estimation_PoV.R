@@ -1,5 +1,5 @@
 ## inputs
-X <- data # insert actigraph time series data here
+X <- data # insert accelerometry time series data here
 eps <- 5 # insert sampling interval in second(s), this value is 5 in Suibkitwanchai et al. (2020)
 har <- 4 # number of harmonics used for calculating PoV (set as positive integer, this value is 4 in Suibkitwanchai et al. (2020))
 ## preliminaries
@@ -16,7 +16,7 @@ for (j in 1:length(sp$freq)) {
   for (k in 1:har) {
     p <- clk/k
     if(period>=min(p) & period<=max(p))
-      PoV[k] <- PoV[k] + (2*diff(sp$freq)[j]*sp$spec[j])/v
+      PoV[k] <- PoV[k] + 2*((2*diff(sp$freq)[j]*sp$spec[j])/v)
   }
 }
 PoV_har <- sum(PoV[1:har]) # PoV at the first nth harmonic, where n = har 
