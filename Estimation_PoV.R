@@ -7,7 +7,7 @@ N <- length(X)
 nh <- (60*60)/eps # number of ENMO values per hour
 nd <- 24*nh # number of ENMO values per day
 ## Proportion of Variance (PoV)
-sp <- spectrum(X, plot = FALSE, taper = 0) # periodogram
+sp <- spectrum(X, plot = FALSE, taper = 0) # periodogram (Eq (8))
 v <- var(X) # sample variance 
 PoV <- numeric(har)
 for (j in 1:length(sp$freq)) {
@@ -16,7 +16,7 @@ for (j in 1:length(sp$freq)) {
   for (k in 1:har) {
     p <- clk/k
     if(period>=min(p) & period<=max(p))
-      PoV[k] <- PoV[k] + 2*((2*diff(sp$freq)[j]*sp$spec[j])/v)
+      PoV[k] <- PoV[k] + 2*((2*diff(sp$freq)[j]*sp$spec[j])/v) # both positive and negative frequencies (Eq (9) and Eq (10))
   }
 }
 PoV_har <- sum(PoV[1:har]) # PoV at the first nth harmonic, where n = har 
