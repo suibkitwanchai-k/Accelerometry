@@ -5,7 +5,7 @@ eps <- 5 # insert sampling interval in second(s), this value is 5 in Suibkitwanc
 N <- length(X)
 nh <- (60*60)/eps # number of ENMO values per hour
 nd <- 24*nh # number of ENMO values per day
-## Estimation of Hurst exponents using DFA
+## Estimation of DFA scaling exponent
 library(pracma)
 Z <- cumsum(X-mean(X)) # Eq (5)
 scale <- 2^seq(4,8,by=0.25)
